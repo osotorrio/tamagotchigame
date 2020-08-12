@@ -31,27 +31,7 @@ namespace TamagotchiGame
             set 
             {
                 _age = value;
-
-                // this is bananas
-                if (value >= (int)LifeStage.Baby && value < (int)LifeStage.Child)
-                {
-                    LifeStage = LifeStage.Baby;
-                }
-
-                if (value > (int)LifeStage.Child && value < (int)LifeStage.Teen)
-                {
-                    LifeStage = LifeStage.Child;
-                }
-
-                if (value > (int)LifeStage.Teen && value < (int)LifeStage.Adult)
-                {
-                    LifeStage = LifeStage.Teen;
-                }
-
-                if (value > (int)LifeStage.Adult)
-                {
-                    LifeStage = LifeStage.Adult;
-                }
+                SetLifeStage(value);
             }
         }
 
@@ -87,6 +67,30 @@ namespace TamagotchiGame
         public void Feed()
         {
             _needs.Single(need => need is FoodNeed).Satisfy(this);
+        }
+
+        private void SetLifeStage(int value)
+        {
+            // this is bananas
+            if (value >= (int)LifeStage.Baby && value < (int)LifeStage.Child)
+            {
+                LifeStage = LifeStage.Baby;
+            }
+
+            if (value >= (int)LifeStage.Child && value < (int)LifeStage.Teen)
+            {
+                LifeStage = LifeStage.Child;
+            }
+
+            if (value >= (int)LifeStage.Teen && value < (int)LifeStage.Adult)
+            {
+                LifeStage = LifeStage.Teen;
+            }
+
+            if (value >= (int)LifeStage.Adult)
+            {
+                LifeStage = LifeStage.Adult;
+            }
         }
     }
 }
