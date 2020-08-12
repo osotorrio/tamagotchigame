@@ -18,7 +18,7 @@ namespace TamagotchiGame.Tests
             dragon.LifeStage = lifeStage;
             var hungrinessBefore = dragon.Hungriness;
 
-            var need = new FoodNeed();
+            var need = new FoodNeeds();
 
             // Act
             need.Satisfy(dragon);
@@ -40,7 +40,7 @@ namespace TamagotchiGame.Tests
             dragon.LifeStage = lifeStage;
             var happinessBefore = dragon.Happiness;
 
-            var need = new PettingNeed();
+            var need = new PettingNeeds();
 
             // Act
             need.Satisfy(dragon);

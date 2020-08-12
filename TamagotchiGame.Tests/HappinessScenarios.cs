@@ -6,12 +6,12 @@ namespace TamagotchiGame.Tests
     public class HappinessScenarios
     {
         [Scenario]
-        public void PettingYourDragonMakesThemHappy(IAmTamagotchi dragon, int happinessBefore, int happinessAfter)
+        public void PettingYourDragonMakesThemHappy(Tamagotchi dragon, int happinessBefore, int happinessAfter)
         {
             "Given a dragon with petting needs".x(() =>
             {
                 dragon = new Tamagotchi("Dragon");
-                dragon.AddNeed(new PettingNeed());
+                dragon.AddNeed(new PettingNeeds());
                 happinessBefore = dragon.Happiness;
             });
 
@@ -28,12 +28,12 @@ namespace TamagotchiGame.Tests
         }
 
         [Scenario]
-        public void DragonsHappinessDecreasesOverTime(IAmTamagotchi dragon, int happinessBefore, int happinessAfter)
+        public void DragonsHappinessDecreasesOverTime(Tamagotchi dragon, int happinessBefore, int happinessAfter)
         {
             "Given a dragon with petting needs".x(() =>
             {
                 dragon = new Tamagotchi("Dragon");
-                dragon.AddNeed(new PettingNeed());
+                dragon.AddNeed(new PettingNeeds());
                 happinessBefore = dragon.Happiness;
             });
 

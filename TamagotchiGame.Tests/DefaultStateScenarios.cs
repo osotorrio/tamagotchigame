@@ -6,7 +6,7 @@ namespace TamagotchiGame.Tests
     public class DefaultStateScenarios
     {
         [Scenario]
-        public void DragonStartsOffAsNeutralMetricsAsBaby(IAmTamagotchi dragon)
+        public void DragonStartsOffAsNeutralMetricsAsBaby(AbstractTamagotchi dragon)
         {
             "Given a dragon".x(() =>
             {
@@ -18,6 +18,11 @@ namespace TamagotchiGame.Tests
             "Then the dragon is a baby".x(() =>
             {
                 dragon.LifeStage.ShouldBe(LifeStage.Baby);
+            });
+
+            "And dragon weight is 7 beautiful kilograms".x(() =>
+            {
+                dragon.Weight.ShouldBe(7);
             });
 
             "And dragon happiness is neutral".x(() =>

@@ -6,12 +6,12 @@ namespace TamagotchiGame.Tests
     public class HungrinessScenarios
     {
         [Scenario]
-        public void FeedingYourDragonMakesThemLessHungry(IAmTamagotchi dragon, int hungrinessBefore, int hungrinessAfter)
+        public void FeedingYourDragonMakesThemLessHungry(Tamagotchi dragon, int hungrinessBefore, int hungrinessAfter)
         {
             "Given a dragon with food needs".x(() =>
             {
                 dragon = new Tamagotchi("Dragon");
-                dragon.AddNeed(new FoodNeed());
+                dragon.AddNeed(new FoodNeeds());
                 hungrinessBefore = dragon.Hungriness;
             });
 
@@ -28,12 +28,12 @@ namespace TamagotchiGame.Tests
         }
 
         [Scenario]
-        public void DragonsHungerIncreasesOverTime(IAmTamagotchi dragon, int hungrinessBefore, int hungrinessAfter)
+        public void DragonsHungerIncreasesOverTime(Tamagotchi dragon, int hungrinessBefore, int hungrinessAfter)
         {
             "Given a dragon with food needs".x(() =>
             {
                 dragon = new Tamagotchi("Dragon");
-                dragon.AddNeed(new FoodNeed());
+                dragon.AddNeed(new FoodNeeds());
                 hungrinessBefore = dragon.Hungriness;
             });
 
