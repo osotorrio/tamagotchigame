@@ -37,7 +37,7 @@ namespace TamagotchiGame.Tests
             dragon.Pet();
             dragon.Happiness.ShouldBe(-15); // It is less unhappy now
 
-            // At this point we could add a new need. For example the need for a diet (Implemented below)
+            // At this point we could add a new need. For example the need for a diet (Implemented bellow)
             dragon.AddNeed(new DietNeeds());
 
             dragon.Weight.ShouldBe(7);
