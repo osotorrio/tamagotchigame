@@ -37,7 +37,7 @@ namespace TamagotchiGame.Tests
                 hungrinessBefore = dragon.Hungriness;
             });
 
-            "When time passes".x(() =>
+            "When time passes without food".x(() =>
             {
                 dragon.TimePassed();
                 hungrinessAfter = dragon.Hungriness;

@@ -37,7 +37,7 @@ namespace TamagotchiGame.Tests
                 happinessBefore = dragon.Happiness;
             });
 
-            "When time passes".x(() =>
+            "When time passes without attention".x(() =>
             {
                 dragon.TimePassed();
                 happinessAfter = dragon.Happiness;
