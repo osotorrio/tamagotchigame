@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace TamagotchiGame
 {
@@ -13,27 +11,37 @@ namespace TamagotchiGame
 
     public class FoodNeed : IPetNeed
     {
+        private Dictionary<LifeStage, int> _rates => new Dictionary<LifeStage, int> 
+        {
+            { LifeStage.Baby, 10 }, { LifeStage.Child, 8 }, { LifeStage.Teen, 5 }, { LifeStage.Adult, 3 }
+        }; 
+
         public void Dissatisfy(IAmTamagotchi tamagotchi)
         {
-            tamagotchi.Hungriness++;
+            tamagotchi.Hungriness += _rates[tamagotchi.LifeStage];
         }
 
         public void Satisfy(IAmTamagotchi tamagotchi)
         {
-            tamagotchi.Hungriness--;
+            tamagotchi.Hungriness -= _rates[tamagotchi.LifeStage];
         }
     }
 
     public class PettingNeed : IPetNeed
     {
+        private Dictionary<LifeStage, int> _rates => new Dictionary<LifeStage, int>
+        {
+            { LifeStage.Baby, 20 }, { LifeStage.Child, 15 }, { LifeStage.Teen, 10 }, { LifeStage.Adult, 20 }
+        };
+
         public void Dissatisfy(IAmTamagotchi tamagotchi)
         {
-            tamagotchi.Happiness--;
+            tamagotchi.Happiness -= _rates[tamagotchi.LifeStage];
         }
 
         public void Satisfy(IAmTamagotchi tamagotchi)
         {
-            tamagotchi.Happiness++;
+            tamagotchi.Happiness += _rates[tamagotchi.LifeStage];
         }
     }
 }
