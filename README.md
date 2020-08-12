@@ -2,10 +2,10 @@
 
 For this implementation the Observer pattern has been used. Following is the description of the actors involved.
 
-- Subject -> AbstractTamagotchi
-- ConcreteSubject -> Tamagotchi
-- Observer -> IHaveNeeds
-- ConcreteObserver -> FoodNeeds, PettingNeeds
+- Subject -> [AbstractTamagotchi](https://github.com/osotorrio/tamagotchigame/blob/master/TamagotchiGame/AbstractTamagotchi.cs)
+- ConcreteSubject -> [Tamagotchi](https://github.com/osotorrio/tamagotchigame/blob/master/TamagotchiGame/Tamagotchi.cs)
+- Observer -> [IHaveNeeds](https://github.com/osotorrio/tamagotchigame/blob/master/TamagotchiGame/IHaveNeeds.cs)
+- ConcreteObserver -> [FoodNeeds, PettingNeeds](https://github.com/osotorrio/tamagotchigame/blob/master/TamagotchiGame/IHaveNeeds.cs)
 
 # Change of state and notification to observers
 
