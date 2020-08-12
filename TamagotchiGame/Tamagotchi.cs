@@ -3,19 +3,19 @@ using System.Linq;
 
 namespace TamagotchiGame
 {
-    public enum LifeStage
-    {
-        Baby = 0,
-        Child = 1,
-        Teen = 12,
-        Adult = 18
-    }
-
     public class Tamagotchi : IAmTamagotchi
     {
         private int _age;
 
         private readonly List<IPetNeed> _needs = new List<IPetNeed>();
+
+        private readonly Dictionary<int, LifeStage> _lifeStageThresholds = new Dictionary<int, LifeStage>
+        {
+            { (int)LifeStage.Baby, LifeStage.Baby }, 
+            { (int)LifeStage.Child, LifeStage.Child }, 
+            { (int)LifeStage.Teen, LifeStage.Teen }, 
+            { (int)LifeStage.Adult, LifeStage.Adult }
+        };
 
         public Tamagotchi(string name)
         {
@@ -71,25 +71,12 @@ namespace TamagotchiGame
 
         private void SetLifeStage(int value)
         {
-            // this is bananas
-            if (value >= (int)LifeStage.Baby && value < (int)LifeStage.Child)
+            foreach (var thresholds in _lifeStageThresholds)
             {
-                LifeStage = LifeStage.Baby;
-            }
-
-            if (value >= (int)LifeStage.Child && value < (int)LifeStage.Teen)
-            {
-                LifeStage = LifeStage.Child;
-            }
-
-            if (value >= (int)LifeStage.Teen && value < (int)LifeStage.Adult)
-            {
-                LifeStage = LifeStage.Teen;
-            }
-
-            if (value >= (int)LifeStage.Adult)
-            {
-                LifeStage = LifeStage.Adult;
+                if (value >= thresholds.Key)
+                {
+                    LifeStage = thresholds.Value;
+                }
             }
         }
     }

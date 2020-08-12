@@ -25,6 +25,7 @@ namespace TamagotchiGame.Tests
         [InlineData(16, LifeStage.Teen)]
         [InlineData(17, LifeStage.Teen)]
         [InlineData(18, LifeStage.Adult)]
+        [InlineData(19, LifeStage.Adult)]
         public void LifeStageBasedOnAgeUnitTest(int age, LifeStage expectedLifeStage)
         {
             // Arrange
