@@ -9,7 +9,7 @@ For this implementation the Observer pattern has been used. Following is the des
 
 # Change of state and notification to observers
 
-This behaviour can be observer in the [TimePassed() method](https://github.com/osotorrio/tamagotchigame/blob/master/TamagotchiGame/Tamagotchi.cs#L30). When time passed, the tamagotchi age and all needs (observers) are notified. In this implementaion, observers has the faculty of change the state of the tamagotchi (concrete subject).
+This behaviour can be observed in the [TimePassed() method](https://github.com/osotorrio/tamagotchigame/blob/master/TamagotchiGame/Tamagotchi.cs#L30). When time passes, the tamagotchi ages and all needs (observers) are notified. In this implementaion, observers has the faculty of changing the state of the tamagotchi (concrete subject).
 
 # Testing
 
@@ -17,7 +17,7 @@ Two types of unit tests have been used. Scenarios describing the behaviour of th
 
 # Application Client
 
-An example of this API library is described in the [application client test class](https://github.com/osotorrio/tamagotchigame/blob/master/TamagotchiGame.Tests/ApplicationClient.cs).
+An example of use of this API library is described in the [application client test class](https://github.com/osotorrio/tamagotchigame/blob/master/TamagotchiGame.Tests/ApplicationClient.cs).
 
 
 
