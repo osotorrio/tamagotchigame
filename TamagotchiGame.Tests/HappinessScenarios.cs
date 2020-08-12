@@ -21,7 +21,7 @@ namespace TamagotchiGame.Tests
                 happinessAfter = dragon.Happiness;
             });
 
-            "Then the dragon is happy".x(() =>
+            "Then the dragon is more happy".x(() =>
             {
                 happinessAfter.ShouldBeGreaterThan(happinessBefore);
             });

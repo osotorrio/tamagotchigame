@@ -21,7 +21,7 @@ namespace TamagotchiGame.Tests
                 hungrinessAfter = dragon.Hungriness;
             });
 
-            "Then the dragon is happy".x(() =>
+            "Then the dragon is less hungry".x(() =>
             {
                 hungrinessAfter.ShouldBeLessThan(hungrinessBefore);
             });
